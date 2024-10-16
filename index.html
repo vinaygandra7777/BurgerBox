@@ -129,7 +129,7 @@
   height: 3.125em;
 }
 
-.text {
+.text1 {
   max-width: 55px;
 }
 
@@ -165,12 +165,12 @@
                 <i class="fa fa-bars"></i>
               </a>
             </div>
-    <div class="maincontact">
+    <div class="maincontact text">
         <h2>CRUNCH<span style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> GOODNESS</span></h2>
         <br><br>
         <h1>BURGER</h1>
     </div>
-    <div class="contact">
+    <div class="contact text">
         <img src="pics/burgerr.png">
         <a href="#menu"><button> SEE MORE</button></a>
     </div>
@@ -182,7 +182,7 @@
         <div class="c1">
             <img src="pics/bug1.png">
         </div>
-        <div class="c2" id="text">
+        <div class="c2 text" id="text1">
             <button>About us</button>
             <br><br><br>
             <h3>Delivering best ingredients for our trusty food lovers</h3>
@@ -208,7 +208,7 @@
             <div class="child22">
                 <h1 style="text-align: center;">Ham Sandwich</h1>
                 <br>
-            <div class="class1">
+            <div class="class1 text">
                 <div class="a">
                     <button>fat 26g</button>
                 </div>
@@ -220,9 +220,9 @@
                 </div>
             </div>
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
             <br><br>
-            <div class="class2">
+            <div class="class2 text">
                 <div class="b">
                     <h2>$16</h2>
                 </div>
@@ -232,7 +232,7 @@
             </div>
         </div>
         </div>
-            <div class="first">
+            <div class="first text">
             <div class="card">
                 <div class="image"> <img src="pics/hue2.png" height="80%" width="100%"></div>
                     <span class="title">Juicy Beef Burger Meal</span>
@@ -263,7 +263,7 @@
             <div class="child4-1">
                 <img src="pics/layer1.png">
             </div>
-            <div class="child4-2">
+            <div class="child4-2 text">
                 <button>-25% OFF</button>
                 <br>
                 <br>
@@ -280,7 +280,7 @@
     </div>
     <div class="main4">
         <div class="child5">
-            <div class="child5-2">
+            <div class="child5-2 text">
                 <button>-15% OFF</button>
                 <br>
                 <h2>New, amazing sandwich offers every day</h2>
@@ -467,7 +467,7 @@
             <div class="c1">
                 <img src="pics/women.png" width="100%">
             </div>
-            <div class="c2">
+            <div class="c2 text">
                 <button>TESTIMONIALS</button>
                 <br>
                 <br>
@@ -508,7 +508,7 @@
 
         </div>
         <br><br><br><br><br><br><br><br><br>
-        <footer id="contact">
+        <footer id="contact" class="text">
             <div class="foot1"> 
                 <h3><b> THE BURGER BOX</b></h3>
                 <br>
@@ -561,7 +561,22 @@
                 x.style.display = "block";
               }
             }
-            </script>    
+            </script>
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll('.text');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script> 
     
 </body>
 </html>
